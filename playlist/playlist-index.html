@@ -273,6 +273,49 @@
         </div>
         <!-- === EDIT SAFE ZONE END – Playlist 1 =========================================== -->
 
+            <!-- === EDIT SAFE ZONE START – Playlist 3 ========================================= -->
+        <div class="playlist-card">
+            <!-- 
+                === THUMBNAIL LOGIC ===
+                Option A: Preferred – put your custom thumbnail URL here (upload to GitHub repo or use imgur/etc.)
+                Option B: Automatic – leave src empty or use placeholder, then fill playlist-url below
+                The script below will try to extract first video ID and use its thumbnail if custom src is not provided
+            -->
+            <div class="playlist-thumbnail-container">
+                <!-- === EDIT ZONE START (thumbnail) ===
+                     Option A: Paste direct image URL here (recommended for reliability)
+                     Option B: Leave blank or use placeholder → auto-use first video thumbnail from playlist link below
+                -->
+                <img class="playlist-thumbnail" 
+                     src="https://media.licdn.com/dms/image/v2/D5612AQH64ontko9soA/article-cover_image-shrink_720_1280/B56ZlRhpqKJ0AI-/0/1758009401395?e=2147483647&v=beta&t=aGVlof5D039MTz-F-ivCuqaJThd7s1m3PgcAhlLnTIM" 
+                     data-playlist-url="https://www.youtube.com/playlist?list=PLpuxPG4TUOR4SRMLJTC3ywPeBIQ0Wm3js" 
+                     alt="Playlist thumbnail" 
+                     onload="if(!this.src || this.src.includes('placeholder')) { extractFirstVideoThumbnail(this); }">
+                <!-- === EDIT ZONE END (thumbnail) === -->
+
+                <!-- Edit video count overlay here -->
+                <div class="playlist-overlay">28 videos</div>
+            </div>
+
+            <div class="playlist-info">
+                <!-- Change playlist title here -->
+                <h2 class="playlist-title">IR and Polity videos By Shashank Tyagi</h2>
+                <!-- Change channel name here -->
+                <div class="playlist-channel">studyIQ</div>
+                <!-- Change your personal reason here -->
+                <p class="playlist-reason">
+                   For those who have taste in international ralations and geopolitics, this playlist is a gem. It offers deep insights into global affairs.
+                </p>
+                <!-- Change stats here -->
+                <div class="playlist-stats">
+                    745 videos
+                </div>
+                <!-- Change direct YouTube playlist link here (used for auto-thumbnail if no custom image) -->
+                <a href="https://www.youtube.com/playlist?list=PLpuxPG4TUOR4SRMLJTC3ywPeBIQ0Wm3js" target="_blank" class="playlist-link">Watch Playlist</a>
+            </div>
+        </div>
+        <!-- === EDIT SAFE ZONE END – Playlist 3 =========================================== -->
+
         <!-- Add more playlists by copying the entire block above -->
 
         <!-- === EDIT SAFE ZONE START – Playlist 2 ========================================= -->
@@ -280,20 +323,19 @@
             <div class="playlist-thumbnail-container">
                 <img class="playlist-thumbnail" 
                      src="https://i.ytimg.com/vi/kRX5VYqiAFM/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAOc8IjlEvr8m6ymZKJrRZj2AyMeA" 
-                     data-playlist-url="https://youtube.com/playlist?list=PLniT1PrSGYzUD2CoYqvTqF3qDyFIoTfys&si=I_KUZd2rMm86kfjS" 
+                     data-playlist-url="https://www.youtube.com/playlist?list=PLniT1PrSGYzUD2CoYqvTqF3qDyFIoTfys" 
                      alt="Playlist thumbnail" 
                      onload="if(!this.src || this.src.includes('placeholder')) { extractFirstVideoThumbnail(this); }">
-                <div class="playlist-overlay">45 videos</div>
+                <div class="playlist-overlay">1 videos</div>
             </div>
 
             <div class="playlist-info">
-                <h2 class="playlist-title">NeetCode 150 - LeetCode Solutions</h2>
-                <div class="playlist-channel">NeetCode</div>
+                <h2 class="playlist-title">Logic Gates</h2>
+                <div class="playlist-channel">SΛntΛnu.py</div>
                 <p class="playlist-reason">
-                    The most efficient way to prepare for coding interviews. Clear explanations, optimal solutions, and great for pattern recognition.
-                </p>
+                    it helps you to learn about the basics of electronics</p>
                 <div class="playlist-stats">
-                    45 videos • ~20 hours
+                    1 videos • ~0.3 hours
                 </div>
                 <a href="https://www.youtube.com/playlist?list=PLniT1PrSGYzUD2CoYqvTqF3qDyFIoTfys" target="_blank" class="playlist-link">Watch Playlist</a>
             </div>
