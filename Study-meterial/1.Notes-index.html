@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- EDIT THIS: Change browser tab title -->
+  <title>Notes • Santanu</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      background: #0f0f17;
+      color: #e0e0ff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 0 3rem;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.8rem;
+      color: #a78bfa;           /* soft purple-cyan accent */
+    }
+
+    .subtitle {
+      color: #a0a0c0;
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .note-card {
+      background: #181824;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #2a2a3a;
+      transition: all 0.25s ease;
+    }
+
+    .note-card:hover {
+      transform: translateY(-8px);
+      border-color: #ff9ad5;     /* pink hover accent */
+      box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+    }
+
+    .note-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .note-content {
+      padding: 1.5rem;
+    }
+
+    .note-title {
+      font-size: 1.35rem;
+      margin: 0 0 0.7rem;
+      color: #ffffff;
+    }
+
+    .note-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .note-title a:hover {
+      color: #ff9ad5;
+    }
+
+    .note-date {
+      color: #a78bfa;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .note-summary {
+      color: #d0d0e0;
+      font-size: 0.98rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .read-note {
+      color: #a78bfa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .read-note:hover {
+      color: #ff9ad5;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 0 2rem;
+      color: #707090;
+      font-size: 0.9rem;
+      border-top: 1px solid #2a2a3a;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.5rem; }
+      .notes-grid { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <!-- EDIT THIS: main page title -->
+      <h1>Notes</h1>
+      <!-- EDIT THIS: short subtitle/description -->
+      <p class="subtitle">
+        Quick thoughts, code snippets, links, reminders — things I want to remember later
+      </p>
+    </header>
+
+    <div class="notes-grid">
+
+      <!-- 
+        === HOW TO ADD / EDIT A NOTE ===
+        1. Each note is one <article class="note-card"> ... </article> block
+        2. To add new note → copy one complete note-card block
+        3. Paste it right here (before the closing </div> of .notes-grid)
+        4. Only change lines marked with <!-- EDIT THIS -->
+        5. Never change class names, structure, or CSS unless you know what you're doing
+      -->
+
+      <!-- === EXAMPLE NOTE 1 – start copying from here === -->
+      <article class="note-card">
+
+        <!-- EDIT THIS: cover image (optional – can be removed if not needed) -->
+        <img class="note-image" 
+             src="https://images.unsplash.com/photo-1555066931-bf19c9cb1085?w=800" 
+             alt="code snippet">
+
+        <div class="note-content">
+
+          <!-- EDIT THIS: note title + link to full note page -->
+          <h2 class="note-title">
+            <a href="notes/neovim-keybindings-2026.html">Useful Neovim Keybindings I Actually Use</a>
+          </h2>
+
+          <!-- EDIT THIS: date (optional: add tags or emoji if you want) -->
+          <div class="note-date">Jan 07, 2026</div>
+
+          <!-- EDIT THIS: short summary (1–3 lines) -->
+          <p class="note-summary">
+            My current most-used mappings and why I keep them — no fluff, just the ones I reach for daily.
+          </p>
+
+          <!-- EDIT THIS: read more link (should match the href in title) -->
+          <a href="notes/neovim-keybindings-2026.html" class="read-note">Open note →</a>
+        </div>
+      </article>
+      <!-- === EXAMPLE NOTE 1 – end copying here === -->
+
+
+      <!-- === EXAMPLE NOTE 2 === -->
+      <article class="note-card">
+        <img class="note-image" 
+             src="https://images.unsplash.com/photo-1516321310764-9f3c9615c3e4?w=800" 
+             alt="terminal">
+
+        <div class="note-content">
+          <h2 class="note-title">
+            <a href="notes/rust-one-liners.html">Rust One-Liners I Keep Forgetting</a>
+          </h2>
+          <div class="note-date">Dec 30, 2025</div>
+          <p class="note-summary">
+            Quick snippets for iterators, error handling, strings and ownership tricks I re-google every time.
+          </p>
+          <a href="notes/rust-one-liners.html" class="read-note">Open note →</a>
+        </div>
+      </article>
+
+      <!-- === PASTE NEW NOTES HERE === -->
+
+    </div><!-- end .notes-grid -->
+
+    <footer>
+      <!-- EDIT THIS: footer text (optional) -->
+      <p>Just notes — nothing fancy • 2026</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
