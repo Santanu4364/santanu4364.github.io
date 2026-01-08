@@ -15,6 +15,39 @@
         line-height: 1.6;
     }
 
+    /* Top-left Home icon – reusable across pages */
+        .top-left-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .top-left-home a {
+            display: block;
+            padding: 8px;
+            border-radius: 8px;
+            background: rgba(25, 25, 33, 0.7);
+            backdrop-filter: blur(6px);
+            transition: background 0.2s ease;
+        }
+
+        .top-left-home a:hover {
+            background: #ff9ad5;
+        }
+
+        .top-left-home svg {
+            width: 28px;
+            height: 28px;
+            stroke: #9ecbff;
+            transition: stroke 0.2s ease;
+        }
+
+        .top-left-home a:hover svg {
+            stroke: #0e0e11;
+        }
+
+
     img {
         float: right;
         width: 140px;
