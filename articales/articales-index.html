@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- === EDIT ZONE START (page title) ===
-         Change browser tab title here if you want
-    -->
-    <title>YouTube Playlists I Recommend | Santanu's Picks</title>
+    <!-- === EDIT ZONE START (page title) === -->
+    <title>Articles | Santanu</title>
     <!-- === EDIT ZONE END === -->
 
     <style>
         body {
             background: #0e0e11;
-            color: #dcdcdc;
-            font-family: Arial, Helvetica, sans-serif;
-            max-width: 1100px;
+            color: #e0e0e0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            max-width: 760px;               /* Slimmer newspaper column width */
             margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 40px 20px;
+            line-height: 1.72;
             position: relative;
         }
 
-        /* Top-left Home icon */
         .top-left-home {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 30px;
+            left: 30px;
             z-index: 10;
         }
 
         .top-left-home a {
             display: block;
-            padding: 8px;
-            border-radius: 8px;
-            background: rgba(25, 25, 33, 0.7);
-            backdrop-filter: blur(6px);
-            transition: background 0.2s ease;
+            padding: 10px;
+            border-radius: 6px;
+            background: rgba(30, 30, 40, 0.65);
+            backdrop-filter: blur(8px);
+            transition: background 0.25s ease;
         }
 
         .top-left-home a:hover {
@@ -43,165 +40,148 @@
         }
 
         .top-left-home svg {
-            width: 28px;
-            height: 28px;
-            stroke: #9ecbff;
-            transition: stroke 0.2s ease;
+            width: 26px;
+            height: 26px;
+            stroke: #a0c0ff;
+            transition: stroke 0.25s ease;
         }
 
         .top-left-home a:hover svg {
-            stroke: #0e0e11;
+            stroke: #111;
         }
 
         header {
             text-align: center;
-            margin: 80px 0 50px;
-            padding-top: 40px;
+            margin: 100px 0 70px;
+            padding-top: 20px;
         }
 
         h1 {
             color: #ffffff;
-            font-size: 2.6em;
-            margin-bottom: 0.3em;
+            font-family: 'Georgia', serif;
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
+            margin: 0 0 0.4em;
+            font-weight: 700;
         }
 
         .subtitle {
-            color: #b0b0c0;
-            font-size: 1.1em;
-            max-width: 700px;
+            color: #a8a8b8;
+            font-size: 1.05rem;
+            font-style: italic;
+            max-width: 620px;
             margin: 0 auto;
         }
 
-        .playlists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .playlist-card {
-            background: #191921;
-            border: 1px solid #2a2a35;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.25s ease, border-color 0.25s ease;
+        .articles-list {
             display: flex;
             flex-direction: column;
+            gap: 60px;                      /* Lots of breathing room between articles */
         }
 
-        .playlist-card:hover {
-            transform: translateY(-8px);
-            border-color: #ff9ad5;
+        .article-teaser {
+            border-bottom: 1px solid #2a2a38;
+            padding-bottom: 50px;
         }
 
-        .playlist-thumbnail-container {
-            position: relative;
+        .article-teaser:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .article-banner {
             width: 100%;
-        }
-
-        .playlist-thumbnail {
-            width: 100%;
-            height: 180px;
+            height: 220px;                   /* Taller but slim bar style */
             object-fit: cover;
-            border-bottom: 1px solid #2a2a35;
-            background: #111; /* Fallback color if image fails */
+            border-radius: 4px;
+            margin-bottom: 28px;
+            background: #111;
         }
 
-        .playlist-overlay {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: bold;
-        }
-
-        .playlist-info {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .playlist-title {
+        .article-title {
+            font-size: 1.95rem;
             color: #ffffff;
-            font-size: 1.35em;
-            margin: 0 0 8px 0;
+            margin: 0 0 14px 0;
+            line-height: 1.18;
         }
 
-        .playlist-channel {
-            color: #9ecbff;
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
-
-        .playlist-reason {
-            color: #b0b0c0;
-            font-size: 0.95em;
+        .article-meta {
+            color: #8888a0;
+            font-size: 0.92rem;
             margin-bottom: 16px;
-            flex-grow: 1;
+            font-style: italic;
         }
 
-        .playlist-stats {
-            color: #b0b0c0;
-            font-size: 0.9em;
-            margin-bottom: 16px;
+        .article-excerpt {
+            color: #d0d0d8;
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+            max-width: 680px;
         }
 
-        .playlist-link {
+        .article-tags {
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #1f1f2a;
+            color: #ff9ad5;
+            padding: 5px 11px;
+            border-radius: 4px;
+            font-size: 0.84rem;
+            margin-right: 10px;
+            margin-bottom: 8px;
             display: inline-block;
-            background: #252530;
-            color: #9ecbff;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.2s ease;
-            align-self: flex-start;
-            margin-top: auto;
         }
 
-        .playlist-link:hover {
-            background: #ff9ad5;
-            color: #0e0e11;
+        .read-more {
+            color: #9ecbff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.25s ease;
+        }
+
+        .read-more:hover {
+            color: #ff9ad5;
+            text-decoration: underline;
         }
 
         footer {
-            margin-top: 80px;
+            margin-top: 120px;
             text-align: center;
-            border-top: 1px solid #2a2a35;
-            padding-top: 40px;
+            padding-top: 50px;
+            border-top: 1px solid #2a2a38;
         }
 
         .icons a {
-            margin: 0 14px;
-            display: inline-block;
+            margin: 0 16px;
         }
 
         .icons svg {
-            width: 28px;
-            fill: #dcdcdc;
-            transition: fill 0.2s ease, transform 0.2s ease;
+            width: 26px;
+            fill: #c8c8d8;
+            transition: fill 0.25s ease, transform 0.25s ease;
         }
 
         .icons a:hover svg {
             fill: #9ecbff;
-            transform: scale(1.1);
+            transform: scale(1.12);
         }
 
-        @media (max-width: 600px) {
-            .playlists-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 680px) {
+            body {
+                padding: 30px 16px;
             }
-            header {
-                margin: 100px 0 40px;
+            h1 {
+                font-size: 2.4rem;
+            }
+            .article-banner {
+                height: 180px;
             }
             .top-left-home {
-                top: 15px;
-                left: 15px;
+                top: 20px;
+                left: 20px;
             }
         }
     </style>
@@ -210,7 +190,7 @@
 <body>
 
     <div class="top-left-home">
-        <a href="index.html" title="Home" aria-label="Go to home page">
+        <a href="index.html" title="Home">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ecbff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
@@ -219,158 +199,78 @@
     </div>
 
     <header>
-        <h1>YouTube Playlists I Recommend</h1>
-        <!-- === EDIT ZONE START (subtitle) ===
-             Change this intro text if you want
-        -->
-        <p class="subtitle">Playlists that taught me, inspired me, or just made long coding sessions better — updated from time to time</p>
+        <h1>Articles</h1>
+        <!-- === EDIT ZONE START (subtitle) === -->
+        <p class="subtitle">Reflections, tutorials, experiments — written slowly, read carefully</p>
         <!-- === EDIT ZONE END === -->
     </header>
 
-    <section class="playlists-grid">
+    <section class="articles-list">
 
-        <!-- === EDIT SAFE ZONE START – Playlist 1 ========================================= -->
-        <div class="playlist-card">
-            <!-- 
-                === THUMBNAIL LOGIC ===
-                Option A: Preferred – put your custom thumbnail URL here (upload to GitHub repo or use imgur/etc.)
-                Option B: Automatic – leave src empty or use placeholder, then fill playlist-url below
-                The script below will try to extract first video ID and use its thumbnail if custom src is not provided
-            -->
-            <div class="playlist-thumbnail-container">
-                <!-- === EDIT ZONE START (thumbnail) ===
-                     Option A: Paste direct image URL here (recommended for reliability)
-                     Option B: Leave blank or use placeholder → auto-use first video thumbnail from playlist link below
-                -->
-                <img class="playlist-thumbnail" 
-                     src="https://i.ytimg.com/vi/CqvZ3vGoGs0/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCF6I5QNa9pZYmM8D_Sr6y5WPDOkw" 
-                     data-playlist-url="https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU" 
-                     alt="Playlist thumbnail" 
-                     onload="if(!this.src || this.src.includes('placeholder')) { extractFirstVideoThumbnail(this); }">
-                <!-- === EDIT ZONE END (thumbnail) === -->
+        <!-- === EDIT SAFE ZONE START – Article 1 ========================================= -->
+        <article class="article-teaser">
+            <!-- Wide banner image – use landscape photos (1200×630+ recommended) -->
+            <img class="article-banner" src="https://via.placeholder.com/1200x630/191921/9ecbff?text=Article+Banner+1" alt="Article banner">
 
-                <!-- Edit video count overlay here -->
-                <div class="playlist-overlay">28 videos</div>
+            <h2 class="article-title">How I Learned Python from Scratch in 2025</h2>
+
+            <!-- === EDIT ZONE START (meta) === -->
+            <div class="article-meta">January 5, 2026  ·  8 min read</div>
+            <!-- === EDIT ZONE END === -->
+
+            <p class="article-excerpt">
+                The honest path: which resources actually worked, which ones wasted months, and the small habits that made the difference between quitting and shipping real projects.
+            </p>
+
+            <!-- === EDIT ZONE START (tags & link) === -->
+            <div class="article-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Learning</span>
+                <span class="tag">Beginner</span>
             </div>
+            <a href="articles/python-journey-2025.html" class="read-more">Continue reading →</a>
+            <!-- === EDIT ZONE END === -->
+        </article>
+        <!-- === EDIT SAFE ZONE END – Article 1 =========================================== -->
 
-            <div class="playlist-info">
-                <!-- Change playlist title here -->
-                <h2 class="playlist-title">Python for Everybody - Full University Course</h2>
-                <!-- Change channel name here -->
-                <div class="playlist-channel">freeCodeCamp.org</div>
-                <!-- Change your personal reason here -->
-                <p class="playlist-reason">
-                    One of the best structured beginner-to-intermediate Python courses. Great pacing, real projects, and excellent explanations.
-                </p>
-                <!-- Change stats here -->
-                <div class="playlist-stats">
-                    28 videos • ~14 hours
-                </div>
-                <!-- Change direct YouTube playlist link here (used for auto-thumbnail if no custom image) -->
-                <a href="https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU" target="_blank" class="playlist-link">Watch Playlist</a>
+        <!-- === EDIT SAFE ZONE START – Article 2 ========================================= -->
+        <article class="article-teaser">
+            <img class="article-banner" src="https://via.placeholder.com/1200x630/191921/9ecbff?text=Article+Banner+2" alt="Article banner">
+
+            <h2 class="article-title">Why Atomic Habits Changed My Coding Routine</h2>
+
+            <div class="article-meta">December 20, 2025  ·  6 min read</div>
+
+            <p class="article-excerpt">
+                Small systems beat motivation. Real examples from my 100-day streak and the exact moments when I broke the streak — and how I recovered.
+            </p>
+
+            <div class="article-tags">
+                <span class="tag">Productivity</span>
+                <span class="tag">Habits</span>
+                <span class="tag">Coding</span>
             </div>
-        </div>
-        <!-- === EDIT SAFE ZONE END – Playlist 1 =========================================== -->
+            <a href="articles/atomic-habits-coding.html" class="read-more">Continue reading →</a>
+        </article>
+        <!-- === EDIT SAFE ZONE END – Article 2 =========================================== -->
 
-        <!-- Add more playlists by copying the entire block above -->
-
-        <!-- === EDIT SAFE ZONE START – Playlist 2 ========================================= -->
-        <div class="playlist-card">
-            <div class="playlist-thumbnail-container">
-                <img class="playlist-thumbnail" 
-                     src="https://i.ytimg.com/vi/kRX5VYqiAFM/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAOc8IjlEvr8m6ymZKJrRZj2AyMeA" 
-                     data-playlist-url="https://youtube.com/playlist?list=PLniT1PrSGYzUD2CoYqvTqF3qDyFIoTfys&si=I_KUZd2rMm86kfjS" 
-                     alt="Playlist thumbnail" 
-                     onload="if(!this.src || this.src.includes('placeholder')) { extractFirstVideoThumbnail(this); }">
-                <div class="playlist-overlay">45 videos</div>
-            </div>
-
-            <div class="playlist-info">
-                <h2 class="playlist-title">NeetCode 150 - LeetCode Solutions</h2>
-                <div class="playlist-channel">NeetCode</div>
-                <p class="playlist-reason">
-                    The most efficient way to prepare for coding interviews. Clear explanations, optimal solutions, and great for pattern recognition.
-                </p>
-                <div class="playlist-stats">
-                    45 videos • ~20 hours
-                </div>
-                <a href="https://www.youtube.com/playlist?list=PLniT1PrSGYzUD2CoYqvTqF3qDyFIoTfys" target="_blank" class="playlist-link">Watch Playlist</a>
-            </div>
-        </div>
-        <!-- === EDIT SAFE ZONE END – Playlist 2 =========================================== -->
-
-        <!-- Add more as needed -->
+        <!-- Add more articles by copying the <article class="article-teaser"> ... </article> block -->
 
     </section>
 
     <footer>
-        <!-- === EDIT ZONE START (footer text) ===
-             Change these messages if you want
-        -->
-        <p>These are playlists I keep coming back to — no sponsorships.</p>
-        <p>Found a great playlist? Share it with me on X!</p>
+        <!-- === EDIT ZONE START (footer) === -->
+        <p>Written slowly. Read carefully.</p>
+        <p>Feedback & topic suggestions welcome on X.</p>
         <!-- === EDIT ZONE END === -->
 
         <div class="icons">
-            
-     <!-- your social icons remain the same -->
             <a href="https://github.com/santanu4364" title="GitHub" target="_blank">
                 <svg viewBox="0 0 24 24" fill="#dcdcdc"><path d="M12 .5C5.65.5.5 5.64.5 12c0 5.1 3.29 9.42 7.86 10.96.58.12.79-.25.79-.56v-2.03c-3.2.7-3.87-1.37-3.87-1.37-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.8 2.73 1.28 3.4.98.1-.76.41-1.28.74-1.57-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.46-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.7.42.36.8 1.07.8 2.16v3.2c0 .31.21.68.8.56A10.98 10.98 0 0 0 23.5 12C23.5 5.64 18.35.5 12 .5Z"/></svg>
             </a>
             <!-- ... other icons ... -->
-
-    <a href="https://x.com" title="X">
-      <svg width="22" viewBox="0 0 24 24" fill="#dcdcdc">
-        <path d="M18.9 2H22l-7.7 8.8L23 22h-7.1l-5.5-6.8L3.9 22H1l8.3-9.5L2 2h7.1l5 6.2L18.9 2Z"/>
-      </svg>
-    </a>
-
-    <a href="https://linkedin.com" title="LinkedIn">
-      <svg width="22" viewBox="0 0 24 24" fill="#dcdcdc">
-        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V24h-4V8Zm7.5 0h3.8v2.2h.1c.5-.9 1.8-2.2 3.8-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.6c0-1.8 0-4-2.5-4s-2.8 2-2.8 3.9V24h-4V8Z"/>
-      </svg>
-    </a>
-
-    <a href="https://www.youtube.com/@santanumandal841" title="YouTube" target="_blank">
-      <svg width="22" viewBox="0 0 24 24" fill="#dcdcdc">
-        <path d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.3 2.5 12 2.5 12 2.5h-.1s-5.3 0-8.6.3c-.4 0-1.3.1-2.1 1-.6.7-.8 2.4-.8 2.4S0 8.3 0 10.5v1.9c0 2.2.2 4.3.2 4.3s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1 1.8.2 7.6.3 7.6.3s5.3 0 8.6-.3c.4 0 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.2-2.2.2-4.3v-1.9c0-2.2-.2-4.3-.2-4.3zM9.6 14.8V8.7l6 3.1-6 3z"/>
-      </svg>
-    </a>
-
-  </div>
+        </div>
     </footer>
-
-    <!-- Small JavaScript to auto-fetch first video thumbnail from playlist URL -->
-    <script>
-        function extractFirstVideoThumbnail(imgElement) {
-            const playlistUrl = imgElement.dataset.playlistUrl;
-            if (!playlistUrl) return;
-
-            // Extract list ID from URL
-            const listMatch = playlistUrl.match(/[&?]list=([a-zA-Z0-9_-]+)/);
-            if (!listMatch) return;
-
-            const listId = listMatch[1];
-
-            // YouTube playlist URL to fetch first video (no API key needed - public page)
-            const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Temporary public CORS proxy (for demo; in production use your own or server-side)
-            const playlistPageUrl = `https://www.youtube.com/playlist?list=${listId}`;
-
-            // For security/simplicity, we'll simulate fetching the first video ID
-            // Real solution would use server-side or YouTube API, but this is client-side friendly
-            // Alternative simple method: many playlists have first video in URL after &v= when opened
-            // For now: instruct user to provide first video ID or use API
-
-            // Best client-side hack: use oEmbed or known pattern
-            // But easiest reliable way: user pastes first video thumbnail manually (or use API)
-
-            // Placeholder fallback message in console for debugging
-            console.log("Auto-thumbnail: Provide first video thumbnail URL or use YouTube API for " + playlistUrl);
-
-            // Optional: set a fallback generic image
-            imgElement.src = "https://via.placeholder.com/480x360/191921/9ecbff?text=Playlist+" + listId.substring(0,6);
-        }
-    </script>
 
 </body>
 </html>
