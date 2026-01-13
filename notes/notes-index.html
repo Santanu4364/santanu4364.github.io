@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- === EDIT ZONE START (page title) ===
+         Change the browser tab title here if you want
+    -->
+    <!-- EASY EDIT HERE: Browser tab title -->
+    <title>Statistics Notes</title>
+
+    <link rel="icon" type="image/png" href="https://www.clipartmax.com/png/middle/113-1133855_icon-code-png-blue.png">
+
+    <style>
+        body {
+            background: #0c0c14;
+            /* Slightly darker base for uniqueness */
+            color: #e0e0e0;
+            font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+            max-width: 1200px;
+            /* Wider max-width for more content */
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.7;
+            /* Slightly increased line-height for readability */
+            position: relative;
+        }
+
+        .top-left-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .top-left-home a {
+            display: block;
+            padding: 8px;
+            border-radius: 8px;
+            background: rgba(20, 20, 30, 0.8);
+            /* Subtler backdrop */
+            backdrop-filter: blur(8px);
+            transition: background 0.2s ease;
+        }
+
+        .top-left-home a:hover {
+            background: #9ecbff;
+            /* Swapped accent to blue for uniqueness */
+        }
+
+        .top-left-home svg {
+            width: 28px;
+            height: 28px;
+            stroke: #ff9ad5;
+            /* Swapped colors */
+            transition: stroke 0.2s ease;
+        }
+
+        .top-left-home a:hover svg {
+            stroke: #0c0c14;
+        }
+
+        header {
+            text-align: center;
+            margin: 80px 0 50px;
+            padding-top: 40px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.8em;
+            /* Slightly larger title */
+            margin-bottom: 0.3em;
+        }
+
+        .subtitle {
+            color: #b8b8c8;
+            font-size: 1.2em;
+            /* Larger subtitle */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Wider min-width for cards */
+            gap: 35px;
+            /* More spacing */
+            margin: 40px 0;
+        }
+
+        .note-card {
+            background: #14141e;
+            /* Unique card background */
+            border: 1px solid #252535;
+            border-radius: 14px;
+            /* Softer corners */
+            overflow: hidden;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .note-card:hover {
+            transform: translateY(-10px);
+            /* More lift on hover */
+            border-color: #9ecbff;
+            /* Blue accent */
+        }
+
+        .note-icon {
+            width: 100%;
+            height: 200px;
+            /* Shorter "cover" for icons/symbols */
+            object-fit: contain;
+            background: #1e1e28;
+            /* Icon background */
+            padding: 40px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #252535;
+        }
+
+        .note-info {
+            padding: 24px;
+            /* More padding */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .note-title {
+            color: #ffffff;
+            font-size: 1.5em;
+            /* Larger title */
+            margin: 0 0 10px 0;
+        }
+
+        .note-summary {
+            color: #a0a0c0;
+            font-size: 1em;
+            margin-bottom: 14px;
+        }
+
+        .note-keypoints {
+            color: #b8b8c8;
+            font-size: 0.95em;
+            margin-bottom: 18px;
+            flex-grow: 1;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .note-link {
+            display: inline-block;
+            background: #1e1e28;
+            color: #ff9ad5;
+            /* Swapped button color */
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .note-link:hover {
+            background: #9ecbff;
+            color: #0c0c14;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid #252535;
+            padding-top: 40px;
+        }
+
+        .icons a {
+            margin: 0 14px;
+            display: inline-block;
+        }
+
+        .icons svg {
+            width: 28px;
+            fill: #e0e0e0;
+            transition: fill 0.2s ease, transform 0.2s ease;
+        }
+
+        .icons a:hover svg {
+            fill: #ff9ad5;
+            /* Pink hover for variety */
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 600px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                margin: 100px 0 40px;
+            }
+
+            .top-left-home {
+                top: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top-left Home icon – works from ANY subfolder -->
+    <div class="top-left-home">
+        <a href="../index.html" title="Home" aria-label="Go back to home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff9ad5" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+        </a>
+    </div>
+
+    <header>
+        <h1>Notes</h1>
+        <!-- === EDIT ZONE START (subtitle) ===
+             Change this intro text if you want
+        -->
+        <p class="subtitle">Comprehensive notes on various topics — curated by SΛntΛnu.py</p>
+        <!-- === EDIT ZONE END === -->
+    </header>
+
+    <section class="notes-grid">
+
+        <!-- === EDIT SAFE ZONE START – Note Section 1 ========================================= -->
+        <div class="note-card">
+            <!-- Change icon/image URL here (using a stats-related icon for vibe) -->
+            <img class="note-icon" src="https://img.icons8.com/ios/100/ffffff/statistics-report.png"
+                alt="Statistics icon">
+
+            <div class="note-info">
+                <!-- Change title here -->
+                <h2 class="note-title">1. Introduction to Statistics</h2>
+                <!-- Change summary here -->
+                <div class="note-summary">Basics of statistics, population vs sample, descriptive vs inferential
+                    branches.</div>
+                <!-- Change keypoints here -->
+                <ul class="note-keypoints">
+                    <li>Population: Entire collection of elements.</li>
+                    <li>Sample: Subgroup for study.</li>
+                    <li>Descriptive: Summarizing data.</li>
+                    <li>Inferential: Drawing conclusions from samples.</li>
+                </ul>
+                <!-- Change link + button text here (could link to full section or external resource) -->
+                <a href="Statistics1.html" target="_blank" class="note-link">Read Full Section</a>
+            </div>
+        </div>
+        <!-- === EDIT SAFE ZONE END – Note Section 1 =========================================== -->
+
+        <!-- === EDIT SAFE ZONE START – Note Section 2 ========================================= -->
+        <div class="note-card">
+            <img class="note-icon" src="https://img.icons8.com/ios/100/ffffff/database.png" alt="Data icon">
+
+            <div class="note-info">
+                <h2 class="note-title">2. Data</h2>
+                <div class="note-summary">Statistics II.</div>
+                <ul class="note-keypoints">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <a href="../coming_soon.html" target="_blank" class="note-link">Read Full Section</a>
+            </div>
+        </div>
+        <!-- === EDIT SAFE ZONE END – Note Section 2 =========================================== -->
+
+        <!-- === EDIT SAFE ZONE START – Note Section 3 ========================================= -->
+        <div class="note-card">
+            <img class="note-icon" src="https://img.icons8.com/ios/100/ffffff/bar-chart.png" alt="Chart icon">
+
+            <div class="note-info">
+                <h2 class="note-title">Python Intro</h2>
+                <div class="note-summary"></div>
+                <ul class="note-keypoints">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <a href="../coming_soon.html" target="_blank" class="note-link">Read Full Section</a>
+            </div>
+        </div>
+        <!-- === EDIT SAFE ZONE END – Note Section 3 =========================================== -->
+
+        <!-- Add more cards for sections 4-9 similarly -->
+
+
+        <!-- To add a new section:
+             1. Copy the entire block above (from <div class="note-card"> to </div>)
+             2. Paste it here
+             3. Change the content inside the new === EDIT SAFE ZONE === markers -->
+
+    </section>
+
+    <footer>
+        <!-- === EDIT ZONE START (footer text) ===
+             Change these messages if you want
+        -->
+        <p>These notes are my personal compilation — inspired by learning journeys in stats & math.</p>
+        <p>Got feedback or suggestions? DM me on X!</p>
+        <!-- === EDIT ZONE END === -->
+
+        <div class="icons">
+            <a href="https://github.com/santanu4364" title="GitHub" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path
+                        d="M12 .5C5.65.5.5 5.64.5 12c0 5.1 3.29 9.42 7.86 10.96.58.12.79-.25.79-.56v-2.03c-3.2.7-3.87-1.37-3.87-1.37-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.8 2.73 1.28 3.4.98.1-.76.41-1.28.74-1.57-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.46-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.7.42.36.8 1.07.8 2.16v3.2c0 .31.21.68.8.56A10.98 10.98 0 0 0 23.5 12C23.5 5.64 18.35.5 12 .5Z" />
+                </svg>
+            </a>
+
+            <a href="https://www.youtube.com/@santanumandal841" title="YouTube" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path
+                        d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.3 2.5 12 2.5 12 2.5h-.1s-5.3 0-8.6.3c-.4 0-1.3.1-2.1 1-.6.7-.8 2.4-.8 2.4S0 8.3 0 10.5v1.9c0 2.2.2 4.3.2 4.3s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1 1.8.2 7.6.3 7.6.3s5.3 0 8.6-.3c.4 0 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.2-2.2.2-4.3v-1.9c0-2.2-.2-4.3-.2-4.3zM9.6 14.8V8.7l6 3.1-6 3z" />
+                </svg>
+            </a>
+
+            <a href="https://x.com/Santanu819529" title="X" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path d="M18.9 2H22l-7.7 8.8L23 22h-7.1l-5.5-6.8L3.9 22H1l8.3-9.5L2 2h7.1l5 6.2L18.9 2Z" />
+                </svg>
+            </a>
+
+            <a href="https://linkedin.com/in/santanu-mandal" title="LinkedIn" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path
+                        d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V24h-4V8Zm7.5 0h3.8v2.2h.1c.5-.9 1.8-2.2 3.8-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.6c0-1.8 0-4-2.5-4s-2.8 2-2.8 3.9V24h-4V8Z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

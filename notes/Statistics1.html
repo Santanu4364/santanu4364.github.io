@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptive Statistics & Counting Principles - Complete Notes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 24px 30px;
+            background: #fdfdfd;
+            color: #111;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #1a365d;
+        }
+
+        h1 {
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 12px;
+            margin-bottom: 1.4em;
+        }
+
+        h2 {
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 8px;
+            margin: 2.4em 0 1em;
+        }
+
+        h3 {
+            color: #2c5282;
+            margin: 2em 0 0.8em;
+        }
+
+        h4 {
+            color: #2b6cb0;
+            margin: 1.6em 0 0.6em;
+        }
+
+        ul,
+        ol {
+            margin: 0.6em 0 1.2em 1.9em;
+        }
+
+        li {
+            margin-bottom: 0.4em;
+        }
+
+        strong {
+            color: #1a202c;
+        }
+
+        .formula {
+            background: #f0f4f8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+
+        .example {
+            background: #fefcbf;
+            padding: 12px 16px;
+            border-left: 4px solid #d69e2e;
+            margin: 1.2em 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e0;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        th {
+            background: #e2e8f0;
+            font-weight: 600;
+        }
+
+        code {
+            background: #edf2f7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+
+        .page-ref {
+            color: #718096;
+            font-size: 0.92em;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Descriptive Statistics and Counting Principles</h1>
+    <p><em>This document provides a comprehensive introduction to descriptive statistics, data classification, measures
+            of central tendency and dispersion, and fundamental counting principles including permutations and
+            combinations.</em></p>
+
+    <h2>1. Introduction to Statistics</h2>
+    <p>Statistics is the art of learning from data, involving the collection, description, and analysis of data to draw
+        conclusions.</p>
+
+    <h3>1.1 Population and Sample</h3>
+    <ul>
+        <li><strong>Population:</strong> The entire collection of elements of interest.</li>
+        <li><strong>Sample:</strong> A subgroup of the population selected for detailed study.</li>
+    </ul>
+    <div class="example"><strong>Example:</strong> In a study of house prices in Tamil Nadu, all houses in Tamil Nadu
+        constitute the population, while 1000 randomly selected houses from urban areas form the sample.</div>
+
+    <h3>1.2 Branches of Statistics</h3>
+    <ul>
+        <li><strong>Descriptive Statistics:</strong> Focuses on describing and summarizing data, often using numerical
+            or graphical summaries to highlight main points. This can be applied to both sample and population data.
+        </li>
+        <li><strong>Purpose:</strong> To examine and explore information about collected data only.</li>
+        <li><strong>Example:</strong> Calculating the average marks of a class of 50 students.</li>
+    </ul>
+    <ul>
+        <li><strong>Inferential Statistics:</strong> Involves drawing conclusions or making inferences about a
+            population based on data obtained from a sample.</li>
+        <li><strong>Purpose:</strong> To use sample information to draw conclusions about the population.</li>
+        <li><strong>Example:</strong> A teacher uses the average marks of a sample of students to conclude the average
+            marks of all students in the school.</li>
+    </ul>
+
+    <h2>2. Data</h2>
+    <p>Data are facts and figures collected, analyzed, and summarized for presentation and interpretation. Data is
+        typically collected to understand characteristics or attributes of groups of people, places, things, or events.
+    </p>
+
+    <h3>2.1 Types of Data Structure</h3>
+    <ul>
+        <li><strong>Unstructured Data:</strong> Data not organized in a predefined manner, often text-heavy, and
+            requires more effort to process. Examples include YouTube comments, image files, and social media posts.
+        </li>
+        <li><strong>Structured Data:</strong> Data organized in a standardized, clearly defined, and searchable format,
+            making it easy to analyze and understand. It typically appears in tabular form.</li>
+        <li><strong>Example:</strong> A student dataset with columns for Name, Gender, Date of Birth, Marks, and Board.
+        </li>
+    </ul>
+
+    <h3>2.2 Variables and Cases</h3>
+    <ul>
+        <li><strong>Case (Observation):</strong> A unit for which data is collected, uniquely identifying each row in a
+            dataset.</li>
+        <li><strong>Variable:</strong> A characteristic or attribute that varies across all units.</li>
+    </ul>
+    <div class="example"><strong>Example:</strong> In a student dataset, each student (e.g., Anjali, Pradeep) is a case,
+        while "Name," "Gender," "Date of Birth," and "Board" are variables.<br>In a tabular format, rows represent cases
+        (same attribute recorded for each), and columns represent variables (same type of value recorded for each case).
+    </div>
+
+    <h3>2.3 Classification of Data</h3>
+    <p>Data is broadly classified into categorical and numerical types.</p>
+
+    <h4>2.3.1 Categorical Data (Qualitative Variables)</h4>
+    <ul>
+        <li>Identifies group membership.</li>
+        <li>Meaningful mathematical operations cannot be performed on it.</li>
+        <li>Examples: Gender (F, M), Board (State Board, ICSE, CBSE).</li>
+    </ul>
+
+    <h4>2.3.2 Numerical Data (Quantitative Variables)</h4>
+    <ul>
+        <li>Describes numerical properties, allowing mathematical operations.</li>
+        <li>Requires common measurement units (e.g., weights in kilograms, prices in rupees).</li>
+        <li>Example: Marks obtained by students.</li>
+    </ul>
+
+    <h4>2.3.3 Time-series and Cross-sectional Data</h4>
+    <ul>
+        <li><strong>Time-series Data:</strong> Recorded over a period of time for a single entity.</li>
+        <li><strong>Example:</strong> Temperature in Delhi for seven different days.</li>
+        <li><strong>Cross-sectional Data:</strong> Observed at the same time for several entities.</li>
+        <li><strong>Example:</strong> Temperature of Delhi, Chennai, Jaipur, and Bhopal on a particular day.</li>
+    </ul>
+
+    <h4>2.3.4 Scales of Measurement</h4>
+    <p>There are four scales of measurement: nominal, ordinal, interval, and ratio.</p>
+
+    <ul>
+        <li><strong>Nominal Scale:</strong> Data consists of labels or names used to identify characteristics. No
+            inherent order or ranking. Can be numerically coded, but the numbers have no mathematical meaning beyond
+            identification.<br>Examples: Name, Board, Gender, Blood group, Hair color, Brand name of mobile phone,
+            Number plate of cars.</li>
+        <li><strong>Ordinal Scale:</strong> Possesses properties of nominal data, but the order or rank of data is
+            meaningful. Differences between categories are not necessarily equal or meaningful.<br>Example: Customer
+            service ratings (excellent, good, poor) can be ordered, but the difference between "good" and "excellent"
+            isn't quantifiable as the difference between "good" and "bad".</li>
+        <li><strong>Interval Scale:</strong> Has all properties of ordinal data, and the interval between values is
+            expressed in terms of a fixed unit of measure. Always numeric, and differences between values are
+            meaningful. Ratios of values have no meaning because the value of zero is arbitrary (no absolute
+            zero).<br>Example: Temperature in Celsius or Fahrenheit. A 20°C difference is meaningful, but 40°C is not
+            "twice as hot" as 20°C.</li>
+        <li><strong>Ratio Scale:</strong> Has all properties of interval data, and the ratio of two values is
+            meaningful. Possesses an absolute zero property, meaning zero indicates the complete absence of the
+            characteristic. Allows for addition, subtraction, multiplication, and division.<br>Examples: Height (in cm),
+            Weight (in kg), Marks.</li>
+    </ul>
+
+    <h2>3. Describing Categorical Data</h2>
+
+    <h3>3.1 Frequency Distribution</h3>
+    <p>A frequency distribution for qualitative data lists distinct values and their frequencies. Each row in a
+        frequency table shows a category and the number of cases in that category.</p>
+
+    <h3>3.2 Relative Frequency</h3>
+    <p>The relative frequency is the ratio of a category's frequency to the total number of observations. It provides a
+        standard for comparison between 0 and 1.</p>
+
+    <h3>3.3 Charts of Categorical Data</h3>
+    <p>The most common displays for categorical variables are bar charts and pie charts.</p>
+    <ul>
+        <li><strong>Pie Chart:</strong> A circle divided into pieces proportional to the relative frequencies of
+            qualitative data. Best for comparing parts of a whole, especially when one category makes up more than half.
+        </li>
+        <li><strong>Bar Chart:</strong> Displays distinct values on a horizontal axis and frequencies/relative
+            frequencies on a vertical axis. Bars represent frequency/relative frequency, with height proportional to the
+            value. Bars should not touch. Appropriate for representing counts of categories and comparing different
+            groups. For ordinal variables, the bar chart must preserve the ordering.</li>
+        <li><strong>Pareto Chart:</strong> A bar chart where categories are sorted by frequency in descending order.
+            Popular in quality control to identify problems.</li>
+        <li><strong>Stacked Bar Chart:</strong> Represents counts for a category, with each bar further segmented to
+            show frequencies of subcategories within it.</li>
+        <li><strong>100% Stacked Bar Chart:</strong> Useful for visualizing part-to-whole relationships by showing
+            proportions within each category.</li>
+    </ul>
+
+    <h3>3.4 The Area Principle and Misleading Graphs</h3>
+    <p>The Area Principle states that the area occupied by a part of a graph should correspond to the amount of data it
+        represents. Violations of this principle are common ways to mislead with statistics.</p>
+    <ul>
+        <li>Decorated Graphs: Charts with unnecessary decorations can violate the area principle by distorting visual
+            representation.</li>
+        <li>Truncated Graphs: Bar charts where the baseline is not at zero can exaggerate differences.</li>
+        <li>Manipulated Y-axis: Expanding or compressing the y-axis scale can make changes in data seem less or more
+            significant than they are.</li>
+        <li>Round-off Errors: Occur when percentages or proportions in tables are rounded, causing the total sum to
+            slightly differ from 100% or 1, which can lead to inaccuracies in pie charts.</li>
+    </ul>
+
+    <h3>3.5 Summarizing Categorical Data</h3>
+    <p>Descriptive measures are quantities that summarize a dataset. Measures of central tendency indicate the center or
+        most typical value.</p>
+    <ul>
+        <li><strong>Mode:</strong> The most common category in a categorical variable (highest frequency). Corresponds
+            to the longest bar in a bar chart, the widest slice in a pie chart, and the first category in a Pareto
+            chart. Bimodal/Multimodal Data: If two (bimodal) or more (multimodal) categories tie for the highest
+            frequency. Can be defined for both nominal and ordinal data.</li>
+        <li><strong>Median:</strong> For an ordinal variable, it is the category of the middle observation after sorting
+            the values. If an even number of observations, either category on either side of the middle can be chosen as
+            the median. Can only be defined for ordinal data.</li>
+    </ul>
+
+    <h2>4. Describing Numerical Data</h2>
+
+    <h3>4.1 Types of Variables</h3>
+    <ul>
+        <li><strong>Discrete Variable:</strong> Involves a count of something. Examples: Number of people in a
+            household, number of spelling mistakes.</li>
+        <li><strong>Continuous Variable:</strong> Involves a measurement of something. Examples: Weight of a person,
+            height, speed.</li>
+    </ul>
+
+    <h3>4.2 Organizing Numerical Data</h3>
+    <p>Numerical data can be organized by grouping observations into classes (categories or bins) and then constructing
+        frequency and relative-frequency distributions.</p>
+    <ul>
+        <li>Organizing Discrete Data (single value): If few distinct values, use a frequency table where each class is a
+            distinct value.</li>
+        <li>Organizing Continuous Data: Number of Classes: Typically 5 to 20 classes. Each observation must belong to
+            exactly one class. Class intervals are often of equal length.</li>
+    </ul>
+    <p>Terminology:</p>
+    <ul>
+        <li>Lower Class Limit: Smallest value in a class</li>
+        <li>Upper Class Limit: Largest value in a class</li>
+        <li>Class Width: Difference between lower limits of consecutive classes</li>
+        <li>Class Mark: Average of the two class limits</li>
+        <li>A class interval usually contains its left-end but not its right-end boundary point.</li>
+    </ul>
+
+    <h3>4.3 Stem-and-leaf Diagram (Stemplot)</h3>
+    <p>A stem-and-leaf diagram separates each observation into a stem (all but the rightmost digit) and a leaf (the
+        rightmost digit).</p>
+    <p>Construction Steps:</p>
+    <ol>
+        <li>Separate observations into stem and leaf.</li>
+        <li>Write stems vertically, smallest to largest, to the left of a vertical rule.</li>
+        <li>Write each leaf to the right of the rule in its appropriate stem row.</li>
+        <li>Arrange leaves in each row in ascending order.</li>
+    </ol>
+
+    <h3>4.4 Descriptive Measures for Numerical Data</h3>
+
+    <h4>4.4.1 Measures of Central Tendency</h4>
+
+    <strong>Mean:</strong>
+    <p>The sum of observations divided by the number of observations; commonly referred to as the average.</p>
+    <p>Formulas:</p>
+    <ul>
+        <li>Sample mean: <span class="formula">\(\bar{x} = \frac{\sum x_i}{n}\)</span></li>
+        <li>Population mean: <span class="formula">\(\mu = \frac{\sum x_i}{N}\)</span></li>
+        <li>Grouped discrete data: <span class="formula">\(\bar{x} = \frac{\sum f_i x_i}{n}\)</span></li>
+        <li>Grouped continuous data: <span class="formula">\(\bar{x} = \frac{\sum f_i m_i}{n}\)</span> (where <span
+                class="formula">\(m_i\)</span> is midpoint of class interval)</li>
+    </ul>
+    <p>Effect of Constants:</p>
+    <ul>
+        <li>Adding a constant <span class="formula">\(c\)</span>: New mean = Old mean + <span
+                class="formula">\(c\)</span></li>
+        <li>Multiplying by a constant <span class="formula">\(c\)</span>: New mean = Old mean <span
+                class="formula">\(\times c\)</span></li>
+        <li>Sensitivity: Sensitive to outliers.</li>
+    </ul>
+
+    <strong>Median:</strong>
+    <p>The middle value in an ordered dataset, dividing the bottom 50% from the top 50%.</p>
+    <p>Steps:</p>
+    <ol>
+        <li>Arrange data in increasing order.</li>
+        <li>If <span class="formula">\(n\)</span> is odd, median is the <span class="formula">\(\frac{n+1}{2}\)</span>th
+            observation.</li>
+        <li>If <span class="formula">\(n\)</span> is even, median is the mean of the <span
+                class="formula">\(\frac{n}{2}\)</span>th and <span class="formula">\(\frac{n}{2}+1\)</span>th
+            observations.</li>
+    </ol>
+    <p>Effect of Constants: Adding <span class="formula">\(c\)</span> → +<span class="formula">\(c\)</span>; Multiplying
+        by <span class="formula">\(c\)</span> → <span class="formula">\(\times c\)</span>. Not sensitive to outliers.
+    </p>
+
+    <strong>Mode:</strong> The most frequently occurring value in a dataset.<br>Effect of Constants: Adding <span
+        class="formula">\(c\)</span> → +<span class="formula">\(c\)</span>; Multiplying by <span
+        class="formula">\(c\)</span> → <span class="formula">\(\times c\)</span>.
+
+    <h4>4.4.2 Measures of Dispersion (Variability/Spread)</h4>
+
+    <strong>Range:</strong>
+    <p>The difference between the largest and smallest values in a dataset.</p>
+    <p>Formula: Range = Max - Min<br>Sensitivity: Highly sensitive to outliers as it only considers extreme values.</p>
+
+    <strong>Variance:</strong>
+    <p>Measures the variability by considering deviations of data values from the central value. Takes into account all
+        observations.</p>
+    <p>Formulas:</p>
+    <ul>
+        <li>Population variance: <span class="formula">\(\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}\)</span></li>
+        <li>Sample variance: <span class="formula">\(s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}\)</span></li>
+    </ul>
+    <p>Units: Expressed in square units of the original variable.</p>
+    <p>Effect of Constants:</p>
+    <ul>
+        <li>Adding <span class="formula">\(c\)</span>: New variance = Old variance (no change)</li>
+        <li>Multiplying by <span class="formula">\(c\)</span>: New variance = <span class="formula">\(c^2
+                \times\)</span> Old variance</li>
+    </ul>
+
+    <strong>Standard Deviation:</strong>
+    <p>The square root of the variance.</p>
+    <p>Formulas:</p>
+    <ul>
+        <li>Population: <span class="formula">\(\sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{N}}\)</span></li>
+        <li>Sample: <span class="formula">\(s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}\)</span></li>
+    </ul>
+    <p>Units: Expressed in the same units as the original data.</p>
+    <p>Effect of Constants:</p>
+    <ul>
+        <li>Adding <span class="formula">\(c\)</span>: No change</li>
+        <li>Multiplying by <span class="formula">\(c\)</span>: New sd = <span class="formula">\( |c| \times\)</span> Old
+            sd</li>
+    </ul>
+
+    <h3>4.5 Percentiles</h3>
+    <p>The sample <span class="formula">\(100p\)</span> percentile is the data value such that at least <span
+            class="formula">\(100p\%\)</span> of the data are ≤ it, and at least <span
+            class="formula">\(100(1-p)\%\)</span> are ≥ it.</p>
+    <p>Computing Percentiles:</p>
+    <ol>
+        <li>Arrange data in increasing order.</li>
+        <li>Calculate <span class="formula">\(np\)</span>.</li>
+        <li>If <span class="formula">\(np\)</span> not integer → smallest integer greater than <span
+                class="formula">\(np\)</span></li>
+        <li>If <span class="formula">\(np\)</span> integer → average of positions <span class="formula">\(np\)</span>
+            and <span class="formula">\(np+1\)</span></li>
+    </ol>
+
+    <h3>4.6 Quartiles</h3>
+    <p>Quartiles divide a dataset into four equal parts using three values.</p>
+    <ul>
+        <li>First Quartile (Q1): 25th percentile</li>
+        <li>Second Quartile (Q2): 50th percentile = Median</li>
+        <li>Third Quartile (Q3): 75th percentile</li>
+    </ul>
+
+    <h3>4.7 Five Number Summary</h3>
+    <p>Minimum – Q1 – Median – Q3 – Maximum</p>
+
+    <h3>4.8 Interquartile Range (IQR)</h3>
+    <p>IQR = Q3 − Q1</p>
+
+    <h2>5. Association Between Two Variables</h2>
+    <p>Association between two variables means that knowing information about one variable provides information about
+        the other.</p>
+
+    <h3>5.1 Association Between Two Categorical Variables</h3>
+    <p>To find associations, a contingency table is used.<br>Rule: If row relative frequencies (or column relative
+        frequencies) are the same for all rows (or columns), the variables are not associated. If they differ, the
+        variables are associated.</p>
+
+    <h3>5.2 Association Between Two Numerical Variables</h3>
+    <p>A scatter plot is a visual test for association between two numerical variables, displaying pairs of values as
+        points on a two-dimensional plane.</p>
+    <p>Describing Association: Direction (upward, downward, no trend), Curvature (linear, curved), Variation (tightly
+        clustered or not), Outliers.</p>
+
+    <h4>5.2.1 Measures of Association for Numerical Variables</h4>
+
+    <strong>Covariance:</strong>
+    <p>Quantifies the strength of the linear association between two numerical variables.</p>
+    <p>Formulas:</p>
+    <ul>
+        <li>Population: <span class="formula">\(\text{Cov}(x,y) = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{n}\)</span>
+        </li>
+        <li>Sample: <span class="formula">\(\text{Cov}(x,y) = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{n-1}\)</span>
+        </li>
+    </ul>
+    <p>Positive → large x with large y; Negative → large x with small y.</p>
+
+    <strong>Correlation (Pearson r):</strong>
+    <p><span class="formula">\( r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i -
+            \bar{y})^2}} = \frac{\text{Cov}(x,y)}{s_x s_y} \)</span></p>
+    <p>Unitless, −1 ≤ r ≤ +1.</p>
+
+    <h3>5.3 Association Between Categorical and Numerical Variables</h3>
+    <p><strong>Point Bi-serial Correlation Coefficient (\(r_{pb}\)):</strong> Measures association between a numerical
+        variable (X) and a dichotomous categorical variable (Y, e.g. 0 or 1).</p>
+
+    <h2>6. Basic Principle of Counting</h2>
+
+    <h3>6.1 Addition Rule of Counting</h3>
+    <p>If action A can occur in <span class="formula">\(n_1\)</span> ways and action B in <span
+            class="formula">\(n_2\)</span> ways, and A and B cannot occur simultaneously, then total ways = <span
+            class="formula">\(n_1 + n_2\)</span>.</p>
+    <div class="example">Choosing one item (shirt or pant) from 4 shirts and 3 pants → 4 + 3 = 7 choices.</div>
+
+    <h3>6.2 Multiplication Rule of Counting</h3>
+    <p>If action A in <span class="formula">\(n_1\)</span> ways and action B in <span class="formula">\(n_2\)</span>
+        ways, then both → <span class="formula">\(n_1 \times n_2\)</span>.</p>
+    <div class="example">Choosing one shirt (4) AND one pant (3) → 4 × 3 = 12 combinations.</div>
+
+    <h2>7. Factorial</h2>
+    <p><span class="formula">\(n! = n \times (n-1) \times \cdots \times 1\)</span><br>By convention <span
+            class="formula">\(0! = 1\)</span><br><span class="formula">\(n! = n \times (n-1)!\)</span></p>
+
+    <h2>8. Permutation</h2>
+    <p>A permutation is an ordered arrangement of all or some of n distinct objects. Order matters.</p>
+
+    <h3>8.1 Permutation Formula (No Repetition)</h3>
+    <p><span class="formula">\(P(n,r) = {}^nP_r = \frac{n!}{(n-r)!}\)</span></p>
+    <p>Special cases: <span class="formula">\(^nP_0 = 1\), \(^nP_1 = n\), \(^nP_n = n!\)</span></p>
+
+    <h3>8.2 Permutation Formula (With Repetition)</h3>
+    <p><span class="formula">\(n^r\)</span></p>
+
+    <h3>8.3 Rearranging Letters (with Identical Items)</h3>
+    <p>One kind identical: <span class="formula">\(\frac{n!}{p!}\)</span><br>Multiple kinds: <span
+            class="formula">\(\frac{n!}{p_1! \, p_2! \cdots p_k!}\)</span></p>
+
+    <h3>8.4 Circular Permutation</h3>
+    <p>Clockwise ≠ anticlockwise: <span class="formula">\((n-1)!\)</span><br>Clockwise = anticlockwise: <span
+            class="formula">\(\frac{(n-1)!}{2}\)</span></p>
+
+    <h2>9. Combination</h2>
+    <p>A combination is a selection of r objects from n distinct objects where order does not matter.</p>
+
+    <h3>9.1 Combination Formula</h3>
+    <p><span class="formula">\({}^nC_r = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span></p>
+    <p>Properties: <span class="formula">\({}^nC_r = {}^nC_{n-r}\), {}^nC_0 = {}^nC_n = 1</span></p>
+
+    <h3>9.2 Distinguishing Permutation vs. Combination</h3>
+    <p>Permutation → order matters (e.g. medals)<br>Combination → order does not matter (e.g. committee)</p>
+
+    <h3>9.3 Drawing Lines in a Circle</h3>
+    <p>Undirected lines: <span class="formula">\({}^nC_2\)</span><br>Directed lines: <span
+            class="formula">\({}^nP_2\)</span></p>
+
+</body>
+
+</html>
