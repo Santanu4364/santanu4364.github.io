@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development and HTML Fundamentals - Study Notes</title>
+    <link rel="icon" type="image/png" href="https://www.clipartmax.com/png/middle/113-1133855_icon-code-png-blue.png">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 24px 30px;
+            background: #fdfdfd;
+            color: #111;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #1a365d;
+        }
+
+        h1 {
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 12px;
+            margin-bottom: 1.4em;
+        }
+
+        h2 {
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 8px;
+            margin: 2.4em 0 1em;
+        }
+
+        h3 {
+            color: #2c5282;
+            margin: 2em 0 0.8em;
+        }
+
+        h4 {
+            color: #2b6cb0;
+            margin: 1.6em 0 0.6em;
+        }
+
+        ul,
+        ol {
+            margin: 0.6em 0 1.2em 1.9em;
+        }
+
+        li {
+            margin-bottom: 0.4em;
+        }
+
+        strong {
+            color: #1a202c;
+        }
+
+        .formula {
+            background: #f0f4f8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+
+        .example {
+            background: #fefcbf;
+            padding: 12px 16px;
+            border-left: 4px solid #d69e2e;
+            margin: 1.2em 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e0;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        th {
+            background: #e2e8f0;
+            font-weight: 600;
+        }
+
+        code {
+            background: #edf2f7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+
+        .page-ref {
+            color: #718096;
+            font-size: 0.92em;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Web Development and HTML Fundamentals</h1>
+    <p><em>Personal revision notes on how websites work, the role of front-end technologies, and the essential HTML elements used to build a web page.</em></p>
+
+    <h2>1. Understanding Web Development</h2>
+    <p>Web development is the process of creating and maintaining applications that run through the web. It includes planning the structure of a site, presenting information to users, and handling the systems that work behind the visible page.</p>
+
+    <h3>1.1 Browser and Web Server</h3>
+    <ul>
+        <li><strong>Web Browser:</strong> Software used to open and interact with websites. Examples include Chrome, Firefox, Safari, and Opera.</li>
+        <li><strong>Web Server:</strong> A computer system that stores website resources and responds when a browser requests a page.</li>
+    </ul>
+    <div class="example"><strong>Simple idea:</strong> The browser asks for a page, the server processes the request and sends the required web content back to the browser.</div>
+
+    <h3>1.2 Front End and Back End</h3>
+    <ul>
+        <li><strong>Front-end development:</strong> Deals with the visible and interactive part of a website.</li>
+        <li><strong>Back-end development:</strong> Deals with server-side processing, data handling, and operations that are normally hidden from users.</li>
+    </ul>
+
+    <h2>2. Foundations of Front-End Development</h2>
+    <p>The front end controls how a website is structured and presented in the user's browser. Two basic technologies are HTML and CSS.</p>
+    <ul>
+        <li><strong>HTML:</strong> HyperText Markup Language. It provides the structural framework of a web page.</li>
+        <li><strong>CSS:</strong> Cascading Style Sheets. It controls presentation such as colors, spacing, fonts, and layout.</li>
+    </ul>
+    <div class="example"><strong>Memory trick:</strong> HTML builds the skeleton; CSS gives the page its appearance.</div>
+
+    <h2>3. Introduction to HTML</h2>
+    <p>HTML is a markup language used to arrange web content into meaningful elements. Instead of behaving like a general-purpose programming language, HTML uses tags to describe headings, paragraphs, images, links, and other parts of a document.</p>
+
+    <h3>3.1 HTML Tags</h3>
+    <p>Tags are keywords written inside angle brackets. Many tags appear as an opening and closing pair.</p>
+    <pre><code>&lt;tagname&gt;Content&lt;/tagname&gt;</code></pre>
+    <ul>
+        <li><strong>Paired tags:</strong> Have an opening and closing tag, such as <code>&lt;p&gt;...&lt;/p&gt;</code>.</li>
+        <li><strong>Void or unpaired tags:</strong> Do not wrap content, such as <code>&lt;br&gt;</code> and <code>&lt;img&gt;</code>.</li>
+    </ul>
+
+    <h3>3.2 HTML Elements</h3>
+    <p>An HTML element is the complete structure formed by a tag and its content. Elements may also be placed inside other elements; this is called nesting.</p>
+    <pre><code>&lt;body&gt;
+    &lt;h1&gt;Learning HTML&lt;/h1&gt;
+    &lt;p&gt;This paragraph is nested inside the body.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+    <h3>3.3 HTML Attributes</h3>
+    <p>Attributes add extra information or settings to an element. They are written in the opening tag, usually as a name-value pair.</p>
+    <pre><code>&lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;</code></pre>
+    <p>Common examples include <code>href</code> for a link destination, <code>src</code> for an image source, and <code>style</code> for inline CSS.</p>
+
+    <h2>4. Basic Structure of an HTML Document</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Study Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Web Notes&lt;/h1&gt;
+    &lt;p&gt;My first HTML revision page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3>4.1 The DOCTYPE Declaration</h3>
+    <p><code>&lt;!DOCTYPE html&gt;</code> informs the browser that the document should be interpreted as modern HTML. It is a declaration rather than a normal HTML element.</p>
+
+    <h3>4.2 The html Element</h3>
+    <p>The <code>&lt;html&gt;</code> element surrounds the HTML document and acts as its root element.</p>
+
+    <h3>4.3 The head Element</h3>
+    <p>The <code>&lt;head&gt;</code> section stores information about the document. Much of this information is not directly displayed as page content.</p>
+
+    <h3>4.4 The title Element</h3>
+    <p>The <code>&lt;title&gt;</code> element defines the text generally shown on the browser tab.</p>
+
+    <h3>4.5 The body Element</h3>
+    <p>The <code>&lt;body&gt;</code> contains the visible page content, including text, headings, images, and links.</p>
+
+    <h2>5. Headings and Paragraphs</h2>
+    <h3>5.1 Heading Tags</h3>
+    <p>HTML provides six heading levels, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>. The first level represents the highest heading level and the sixth represents the lowest.</p>
+    <pre><code>&lt;h1&gt;Main Topic&lt;/h1&gt;
+&lt;h2&gt;Section&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;</code></pre>
+
+    <h3>5.2 Paragraph Tag</h3>
+    <p>The <code>&lt;p&gt;</code> element represents a paragraph or block of written content.</p>
+    <pre><code>&lt;p&gt;HTML gives structure to a web document.&lt;/p&gt;</code></pre>
+
+    <h2>6. Text Formatting</h2>
+    <p>HTML includes elements that can give text emphasis or a particular visual form.</p>
+    <table>
+        <tr><th>Element</th><th>Typical purpose</th></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Marks emphasized text</td></tr>
+        <tr><td><code>&lt;b&gt;</code></td><td>Displays text in bold style</td></tr>
+        <tr><td><code>&lt;i&gt;</code></td><td>Displays text in italic style</td></tr>
+        <tr><td><code>&lt;u&gt;</code></td><td>Underlines text</td></tr>
+    </table>
+    <div class="example"><strong>Example:</strong> <code>&lt;p&gt;I am studying &lt;em&gt;HTML&lt;/em&gt; today.&lt;/p&gt;</code></div>
+
+    <h2>7. Styling an Element with the style Attribute</h2>
+    <p>The <code>style</code> attribute can apply CSS rules directly to one HTML element.</p>
+    <pre><code>&lt;p style="color: navy; font-size: 20px;"&gt;
+    A styled paragraph
+&lt;/p&gt;</code></pre>
+    <p>The general pattern is <code>property: value;</code>. Multiple CSS declarations can be placed inside the same style attribute.</p>
+
+    <h3>7.1 Background Color</h3>
+    <p>The CSS <code>background-color</code> property changes the background behind an element.</p>
+    <pre><code>&lt;body style="background-color: lightblue;"&gt;
+    Page content
+&lt;/body&gt;</code></pre>
+
+    <h2>8. Adding Images</h2>
+    <p>The <code>&lt;img&gt;</code> element embeds an image in a page. It does not require a closing tag.</p>
+    <pre><code>&lt;img src="campus.jpg"
+     alt="College campus"
+     width="300"
+     height="200"&gt;</code></pre>
+    <ul>
+        <li><strong>src:</strong> Specifies where the image file is located.</li>
+        <li><strong>alt:</strong> Provides alternative text describing the image.</li>
+        <li><strong>width:</strong> Controls displayed width.</li>
+        <li><strong>height:</strong> Controls displayed height.</li>
+    </ul>
+
+    <h2>9. Creating Links</h2>
+    <p>The anchor element <code>&lt;a&gt;</code> creates a hyperlink. The <code>href</code> attribute stores the destination.</p>
+    <pre><code>&lt;a href="https://example.com"&gt;Open the website&lt;/a&gt;</code></pre>
+
+    <h2>10. Working with HTML Colors</h2>
+    <p>Web colors may be written in several forms. Browsers understand standard color names as well as numeric color systems.</p>
+    <table>
+        <tr><th>Method</th><th>Example</th></tr>
+        <tr><td>Color name</td><td><code>tomato</code></td></tr>
+        <tr><td>HEX</td><td><code>#273239</code></td></tr>
+        <tr><td>RGB</td><td><code>rgb(39, 50, 57)</code></td></tr>
+        <tr><td>HSL</td><td><code>hsl(203, 18%, 18%)</code></td></tr>
+    </table>
+
+    <h2>11. Text Alignment</h2>
+    <p>Older HTML examples often use the <code>align</code> attribute or the <code>&lt;center&gt;</code> tag. In modern pages, CSS <code>text-align</code> is the preferred method.</p>
+    <pre><code>&lt;h1 style="text-align: center;"&gt;Centered Heading&lt;/h1&gt;
+&lt;p style="text-align: left;"&gt;Left aligned text&lt;/p&gt;
+&lt;p style="text-align: right;"&gt;Right aligned text&lt;/p&gt;</code></pre>
+
+    <h2>12. Line Breaks with br</h2>
+    <p>The <code>&lt;br&gt;</code> tag forces the following content onto a new line. It is useful for line breaks inside content, but it should not be used simply to create paragraph spacing.</p>
+    <pre><code>&lt;p&gt;
+    First line&lt;br&gt;
+    Second line&lt;br&gt;
+    Third line
+&lt;/p&gt;</code></pre>
+
+    <h2>13. Preformatted Text</h2>
+    <p>The <code>&lt;pre&gt;</code> element preserves spaces and line breaks from the HTML source. Browsers normally display it using a fixed-width font.</p>
+    <pre><code>&lt;pre&gt;
+Name: Om
+Topic: HTML
+Status: Revising
+&lt;/pre&gt;</code></pre>
+
+    <h2>14. Quick Revision Summary</h2>
+    <ul>
+        <li>Web development builds and maintains web-based applications.</li>
+        <li>The browser displays a page while a web server provides requested resources.</li>
+        <li>HTML creates page structure; CSS controls presentation.</li>
+        <li>HTML documents are built from elements, tags, attributes, and nested structures.</li>
+        <li>The <code>head</code> stores document information; the <code>body</code> stores visible content.</li>
+        <li>Headings, paragraphs, images, links, formatting elements, line breaks, and preformatted text are basic HTML tools.</li>
+        <li>For modern web pages, CSS is generally preferred over old presentational HTML attributes.</li>
+    </ul>
+
+
+    <footer>
+        <!-- === EDIT ZONE START (footer text) ===
+             Change these messages if you want
+        -->
+        <p>These notes are my personal compilation — inspired by learning journeys in stats & math.</p>
+        <p>Got feedback or suggestions? DM me on X!</p>
+        <!-- === EDIT ZONE END === -->
+
+        <div class="icons">
+            <a href="https://github.com/santanu4364" title="GitHub" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path
+                        d="M12 .5C5.65.5.5 5.64.5 12c0 5.1 3.29 9.42 7.86 10.96.58.12.79-.25.79-.56v-2.03c-3.2.7-3.87-1.37-3.87-1.37-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.8 2.73 1.28 3.4.98.1-.76.41-1.28.74-1.57-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.46-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.7.42.36.8 1.07.8 2.16v3.2c0 .31.21.68.8.56A10.98 10.98 0 0 0 23.5 12C23.5 5.64 18.35.5 12 .5Z" />
+                </svg>
+            </a>
+
+            <a href="https://www.youtube.com/@santanumandal841" title="YouTube" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path
+                        d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1C17.3 2.5 12 2.5 12 2.5h-.1s-5.3 0-8.6.3c-.4 0-1.3.1-2.1 1-.6.7-.8 2.4-.8 2.4S0 8.3 0 10.5v1.9c0 2.2.2 4.3.2 4.3s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1 1.8.2 7.6.3 7.6.3s5.3 0 8.6-.3c.4 0 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4s.2-2.2.2-4.3v-1.9c0-2.2-.2-4.3-.2-4.3zM9.6 14.8V8.7l6 3.1-6 3z" />
+                </svg>
+            </a>
+
+            <a href="https://x.com/Santanu819529" title="X" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path d="M18.9 2H22l-7.7 8.8L23 22h-7.1l-5.5-6.8L3.9 22H1l8.3-9.5L2 2h7.1l5 6.2L18.9 2Z" />
+                </svg>
+            </a>
+
+            <a href="https://linkedin.com/in/santanu-mandal" title="LinkedIn" target="_blank">
+                <svg viewBox="0 0 24 24" fill="#e0e0e0">
+                    <path
+                        d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V24h-4V8Zm7.5 0h3.8v2.2h.1c.5-.9 1.8-2.2 3.8-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.6c0-1.8 0-4-2.5-4s-2.8 2-2.8 3.9V24h-4V8Z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
